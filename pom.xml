@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-dependencies</artifactId>
+    <version>1.4.2.RELEASE</version>
+  </parent>
+
+  <groupId>io.github.georgwittberger</groupId>
+  <artifactId>extend-mdc</artifactId>
+  <version>1.4.2-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>ExtendMDC</name>
+  <description>A Java aspect to extend the logging MDC with annotation-defined values and method arguments</description>
+  <url>https://github.com/georgwittberger/extend-mdc</url>
+
+  <properties>
+    <java.version>1.6</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+  </properties>
+
+  <modules>
+    <module>aspect</module>
+    <module>spring-boot-autoconfigure</module>
+    <module>spring-boot-starter</module>
+    <module>spring-boot-example</module>
+  </modules>
+
+</project>

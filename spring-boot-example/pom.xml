@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.2.RELEASE</version>
+  </parent>
+
+  <groupId>io.github.georgwittberger</groupId>
+  <artifactId>extend-mdc-spring-boot-example</artifactId>
+  <version>1.4.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>ExtendMDC Spring Boot Example</name>
+  <description>A Spring Boot example web application to showcase the ExtendMDC aspect</description>
+  <url>https://github.com/georgwittberger/extend-mdc</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.georgwittberger</groupId>
+      <artifactId>extend-mdc-spring-boot-starter</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

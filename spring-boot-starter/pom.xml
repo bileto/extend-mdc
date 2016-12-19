@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.georgwittberger</groupId>
+    <artifactId>extend-mdc</artifactId>
+    <version>1.4.2-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>extend-mdc-spring-boot-starter</artifactId>
+  <packaging>jar</packaging>
+
+  <name>ExtendMDC Spring Boot Starter</name>
+  <description>A Spring Boot starter to facilitate the usage of the ExtendMDC aspect in Spring Boot projects</description>
+  <url>https://github.com/georgwittberger/extend-mdc</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-aop</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.georgwittberger</groupId>
+      <artifactId>extend-mdc-aspect</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.georgwittberger</groupId>
+      <artifactId>extend-mdc-spring-boot-autoconfigure</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
