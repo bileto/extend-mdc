@@ -11,7 +11,7 @@
 
   <groupId>io.github.georgwittberger</groupId>
   <artifactId>extend-mdc-spring-boot-example</artifactId>
-  <version>1.4.2-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>ExtendMDC Spring Boot Example</name>
