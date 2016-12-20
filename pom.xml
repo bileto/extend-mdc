@@ -12,6 +12,27 @@
   <description>A Java aspect to extend the logging MDC with annotation-defined values and method arguments</description>
   <url>https://github.com/georgwittberger/extend-mdc</url>
 
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Georg Wittberger</name>
+      <email>georg.wittberger@gmail.com</email>
+      <url>https://github.com/georgwittberger</url>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/georgwittberger/extend-mdc.git</connection>
+    <developerConnection>scm:git:https://github.com/georgwittberger/extend-mdc.git</developerConnection>
+    <url>https://github.com/georgwittberger/extend-mdc/tree/master</url>
+  </scm>
+
   <properties>
     <java.version>1.6</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -99,7 +120,10 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>2.5.3</version>
         <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <useReleaseProfile>false</useReleaseProfile>
           <releaseProfiles>release</releaseProfiles>
+          <goals>deploy</goals>
           <tagNameFormat>v@{project.version}</tagNameFormat>
         </configuration>
       </plugin>
@@ -155,6 +179,20 @@
                 <id>attach-javadocs</id>
                 <goals>
                   <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
                 </goals>
               </execution>
             </executions>

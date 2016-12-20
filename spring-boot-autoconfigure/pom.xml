@@ -16,6 +16,27 @@
   <description>A Spring Boot auto-configuration for the ExtendMDC aspect</description>
   <url>https://github.com/georgwittberger/extend-mdc</url>
 
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Georg Wittberger</name>
+      <email>georg.wittberger@gmail.com</email>
+      <url>https://github.com/georgwittberger</url>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/georgwittberger/extend-mdc.git</connection>
+    <developerConnection>scm:git:https://github.com/georgwittberger/extend-mdc.git</developerConnection>
+    <url>https://github.com/georgwittberger/extend-mdc/tree/master</url>
+  </scm>
+
   <dependencies>
     <dependency>
       <groupId>io.github.georgwittberger</groupId>
