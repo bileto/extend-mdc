@@ -10,7 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import io.github.georgwittberger.extendmdc.aspect.ExtendMDCAspect;
 
 @Configuration
-@ConditionalOnClass({ EnableAspectJAutoProxy.class, Aspect.class, Advice.class })
+@ConditionalOnClass({ ExtendMDCAspect.class, EnableAspectJAutoProxy.class, Aspect.class, Advice.class })
 public class ExtendMDCAutoConfiguration {
   @Bean
   public ExtendMDCAspect extendMDCAspect() {

@@ -18,10 +18,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-aop</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.github.georgwittberger</groupId>
       <artifactId>extend-mdc-aspect</artifactId>
       <version>${project.version}</version>
@@ -30,6 +26,14 @@
       <groupId>io.github.georgwittberger</groupId>
       <artifactId>extend-mdc-spring-boot-autoconfigure</artifactId>
       <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
     </dependency>
   </dependencies>
 
