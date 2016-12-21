@@ -18,6 +18,12 @@
   <description>A Spring Boot example web application to showcase the ExtendMDC aspect</description>
   <url>https://github.com/georgwittberger/extend-mdc</url>
 
+  <scm>
+    <connection>scm:git:git://github.com/georgwittberger/extend-mdc.git</connection>
+    <developerConnection>scm:git:git://github.com/georgwittberger/extend-mdc.git</developerConnection>
+    <url>https://github.com/georgwittberger/extend-mdc/tree/master</url>
+  </scm>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
