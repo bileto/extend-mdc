@@ -37,7 +37,7 @@ If you want to use the plain aspect and do all what it takes to make it work, th
 <dependency>
   <groupId>io.github.georgwittberger</groupId>
   <artifactId>extend-mdc-aspect</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
 </dependency>
 ----
 
@@ -54,7 +54,7 @@ If you are using Spring you can let the framework set up the aspect for you (not
 <dependency>
   <groupId>io.github.georgwittberger</groupId>
   <artifactId>extend-mdc-aspect</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
 </dependency>
 <dependency>
   <groupId>org.springframework</groupId>
@@ -97,7 +97,7 @@ If you are using Spring Boot you can leverage its auto-configuration mechanism t
 <dependency>
   <groupId>io.github.georgwittberger</groupId>
   <artifactId>extend-mdc-spring-boot-starter</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
 </dependency>
 ----
 
