@@ -1,0 +1,141 @@
+= ExtendMDC Java Aspect
+
+== Overview
+
+The MDC (mapped diagnostic context) is a common approach in application logging which helps identifying the context of a log message. For example, in a web application it could be desirable to have the username logged with each message, so that in case of an issue developers can easily trace what happened to that particular user.
+
+Both major Java logging frameworks - http://logback.qos.ch/[Logback] and http://logging.apache.org/log4j/2.x/[Log4J] - support this feature. Typically, you would access the MDC using the static methods of the `MDC` class provided by the http://www.slf4j.org/[SLF4J] library:
+
+[source,java]
+----
+// Put a custom value to the MDC
+MDC.put("Name", "Value");
+
+// Get a custom value from the MDC
+MDC.get("Name");
+
+// Remove a custom value from the MDC
+MDC.remove("Name");
+----
+
+However, this bloats the source code of your business logic with a rather technical aspect.
+
+ExtendMDC provides a Java aspect which offers a declarative way of setting values in the MDC. It allows you to use Java annotations to define fixed values on method level or even have the values of method parameters written into the MDC.
+
+ExtendMDC comes as a pure https://eclipse.org/aspectj/[AspectJ] implementation which can be used in any Java project. To facilitate usage in http://projects.spring.io/spring-framework/[Spring]-based projects we provide an auto-configuration and a plug-and-play http://projects.spring.io/spring-boot/[Spring Boot] starter.
+
+See the following sections to get started...
+
+== Getting Started
+
+=== Installing the plain aspect
+
+If you want to use the plain aspect and do all what it takes to make it work, then you simply add the following dependency to your project:
+
+[source,xml]
+----
+<dependency>
+  <groupId>io.github.georgwittberger</groupId>
+  <artifactId>extend-mdc-aspect</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+</dependency>
+----
+
+_Hint: See the_ https://github.com/georgwittberger/extend-mdc/tags[tags] _for the release versions._
+
+The library provides the `ExtendMDCAspect` class which defines the advice.
+
+=== Installing with Spring
+
+If you are using Spring you can let the framework set up the aspect for you (note that there is an easier way if you are using Spring Boot, see below). First add the following dependencies to your project:
+
+[source,xml]
+----
+<dependency>
+  <groupId>io.github.georgwittberger</groupId>
+  <artifactId>extend-mdc-aspect</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+</dependency>
+<dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-aop</artifactId>
+</dependency>
+<dependency>
+  <groupId>org.aspectj</groupId>
+  <artifactId>aspectjweaver</artifactId>
+</dependency>
+----
+
+_Hint: See the_ https://github.com/georgwittberger/extend-mdc/tags[tags] _for the release versions._
+
+_Hint: Choose suitable versions for_ `spring-aop` _and_ `aspectjweaver` _depending on that version of Spring you are using in your project._
+
+Then add the aspect as a bean to your application context and enable the aspect processing:
+
+[source,java]
+----
+@Configuration
+@EnableAspectJAutoProxy
+public class AspectConfiguration {
+  @Bean
+  public ExtendMDCAspect extendMDCAspect() {
+    return new ExtendMDCAspect();
+  }
+}
+----
+
+=== Installing with Spring Boot
+
+If you are using Spring Boot you can leverage its auto-configuration mechanism to wire up the aspect. All you need to do is add the following dependencies to your project:
+
+[source,xml]
+----
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+<dependency>
+  <groupId>io.github.georgwittberger</groupId>
+  <artifactId>extend-mdc-spring-boot-starter</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+</dependency>
+----
+
+_Hint: See the_ https://github.com/georgwittberger/extend-mdc/tags[tags] _for the release versions._
+
+_Hint: The_ `spring-boot-starter-aop` _is required to provide all the Spring-AOP dependencies since we want to keep our starter independent of the Spring version._
+
+=== Advising a method
+
+In order to apply the aspect to the execution of a certain method you simply annotate this method with `@ExtendMDC`. This allows you to specify custom MDC values which should only be present during the execution of this method.
+
+=== Adding fixed MDC values during method execution
+
+You can configure fixed values to be set during the execution of a certain method. The `@ExtendMDC` annotation can take an arbitrary number of `@MDCValue` arguments for those MDC values.
+
+[source,java]
+----
+@ExtendMDC({
+  @MDCValue(value = "Name 1", content = "Fixed Value 1"),
+  @MDCValue(value = "Name 2", content = "Fixed Value 2")
+})
+public void someAdvisedMethod() {
+  // MDC contains "Name 1" and "Name 2" values while this is executed
+}
+----
+
+=== Adding MDC values based on method arguments
+
+You can configure the aspect to add certain method arguments as values to the MDC while the method is executed. Simply use the `@MDCValue` annotation on the method parameters and provide the name of the MDC value.
+
+[source,java]
+----
+@ExtendMDC
+public void someAdvisedMethod(@MDCValue("Name") String interestingParam, String otherParam) {
+  // MDC contains "Name" with the value of interestingParam while this is executed
+}
+----
+
+== License
+
+MIT
