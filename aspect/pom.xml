@@ -33,8 +33,8 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/georgwittberger/extend-mdc.git</connection>
-    <developerConnection>scm:git:git://github.com/georgwittberger/extend-mdc.git</developerConnection>
+    <connection>scm:git:https://github.com/georgwittberger/extend-mdc.git</connection>
+    <developerConnection>scm:git:https://github.com/georgwittberger/extend-mdc.git</developerConnection>
     <url>https://github.com/georgwittberger/extend-mdc/tree/master</url>
   </scm>
 
