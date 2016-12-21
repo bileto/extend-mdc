@@ -155,13 +155,36 @@
         <executions>
           <execution>
             <id>stage-readme</id>
-            <phase>process-resources</phase>
             <goals>
               <goal>add</goal>
             </goals>
             <configuration>
               <basedir>${basedir}</basedir>
               <includes>README.adoc</includes>
+            </configuration>
+          </execution>
+          <execution>
+            <id>commit-release-readme</id>
+            <goals>
+              <goal>checkin</goal>
+            </goals>
+            <configuration>
+              <basedir>${basedir}</basedir>
+              <includes>README.adoc</includes>
+              <message>Publish release README file</message>
+              <pushChanges>false</pushChanges>
+            </configuration>
+          </execution>
+          <execution>
+            <id>commit-snapshot-readme</id>
+            <goals>
+              <goal>checkin</goal>
+            </goals>
+            <configuration>
+              <basedir>${basedir}</basedir>
+              <includes>README.adoc</includes>
+              <message>Publish snapshot README file</message>
+              <pushChanges>false</pushChanges>
             </configuration>
           </execution>
         </executions>
@@ -171,7 +194,8 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>2.5.3</version>
         <configuration>
-          <preparationGoals>verify</preparationGoals>
+          <preparationGoals>clean verify scm:add@stage-readme scm:checkin@commit-release-readme</preparationGoals>
+          <completionGoals>process-resources scm:add@stage-readme scm:checkin@commit-snapshot-readme</completionGoals>
           <autoVersionSubmodules>true</autoVersionSubmodules>
           <useReleaseProfile>false</useReleaseProfile>
           <releaseProfiles>release</releaseProfiles>
