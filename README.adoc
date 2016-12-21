@@ -68,7 +68,7 @@ If you are using Spring you can let the framework set up the aspect for you (not
 
 _Hint: See the_ https://github.com/georgwittberger/extend-mdc/tags[tags] _for the release versions._
 
-_Hint: Choose suitable versions for_ `spring-aop` _and_ `aspectjweaver` _depending on that version of Spring you are using in your project._
+_Hint: Choose suitable versions for_ `spring-aop` _and_ `aspectjweaver` _depending on the version of Spring you are using in your project._
 
 Then add the aspect as a bean to your application context and enable the aspect processing:
 
