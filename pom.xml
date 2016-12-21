@@ -24,14 +24,20 @@
       <name>Georg Wittberger</name>
       <email>georg.wittberger@gmail.com</email>
       <url>https://github.com/georgwittberger</url>
+      <id>georgwittberger</id>
     </developer>
   </developers>
 
   <scm>
     <connection>scm:git:git://github.com/georgwittberger/extend-mdc.git</connection>
-    <developerConnection>scm:git:https://github.com/georgwittberger/extend-mdc.git</developerConnection>
+    <developerConnection>scm:git:git://github.com/georgwittberger/extend-mdc.git</developerConnection>
     <url>https://github.com/georgwittberger/extend-mdc/tree/master</url>
   </scm>
+
+  <issueManagement>
+    <url>https://github.com/georgwittberger/extend-mdc/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
 
   <properties>
     <java.version>1.6</java.version>
@@ -133,11 +139,9 @@
   <profiles>
     <profile>
       <id>default</id>
-
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
-
       <modules>
         <module>aspect</module>
         <module>spring-boot-autoconfigure</module>
@@ -145,16 +149,13 @@
         <module>spring-boot-example</module>
       </modules>
     </profile>
-
     <profile>
       <id>release</id>
-
       <modules>
         <module>aspect</module>
         <module>spring-boot-autoconfigure</module>
         <module>spring-boot-starter</module>
       </modules>
-
       <build>
         <plugins>
           <plugin>
@@ -201,5 +202,16 @@
       </build>
     </profile>
   </profiles>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
 </project>

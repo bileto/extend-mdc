@@ -28,14 +28,20 @@
       <name>Georg Wittberger</name>
       <email>georg.wittberger@gmail.com</email>
       <url>https://github.com/georgwittberger</url>
+      <id>georgwittberger</id>
     </developer>
   </developers>
 
   <scm>
     <connection>scm:git:git://github.com/georgwittberger/extend-mdc.git</connection>
-    <developerConnection>scm:git:https://github.com/georgwittberger/extend-mdc.git</developerConnection>
+    <developerConnection>scm:git:git://github.com/georgwittberger/extend-mdc.git</developerConnection>
     <url>https://github.com/georgwittberger/extend-mdc/tree/master</url>
   </scm>
+
+  <issueManagement>
+    <url>https://github.com/georgwittberger/extend-mdc/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
 
   <dependencies>
     <dependency>
