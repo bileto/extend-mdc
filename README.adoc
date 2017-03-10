@@ -142,4 +142,4 @@ public void someAdvisedMethod(@MDCValue("Name") String interestingParam, String 
 
 == License
 
-MIT
+https://opensource.org/licenses/MIT[MIT]
