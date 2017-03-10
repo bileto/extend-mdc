@@ -1,8 +1,8 @@
 = ExtendMDC Java Aspect
 
-image::https://img.shields.io/maven-central/v/io.github.georgwittberger/extend-mdc.svg[Maven Central]
-image::https://img.shields.io/github/issues/georgwittberger/extend-mdc.svg[Open Issues]
-image::https://img.shields.io/github/license/georgwittberger/extend-mdc.svg[License]
+image:https://img.shields.io/maven-central/v/io.github.georgwittberger/extend-mdc.svg[Maven Central, title="Maven Central"]
+image:https://img.shields.io/github/issues/georgwittberger/extend-mdc.svg[Open Issues, title="Open Issues"]
+image:https://img.shields.io/github/license/georgwittberger/extend-mdc.svg[License, title="License"]
 
 == Overview
 
