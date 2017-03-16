@@ -1,5 +1,9 @@
 = ExtendMDC Java Aspect
 
+image:https://img.shields.io/maven-central/v/io.github.georgwittberger/extend-mdc.svg[Maven Central, title="Maven Central"]
+image:https://img.shields.io/github/issues/georgwittberger/extend-mdc.svg[Open Issues, title="Open Issues"]
+image:https://img.shields.io/github/license/georgwittberger/extend-mdc.svg[License, title="License"]
+
 == Overview
 
 The MDC (mapped diagnostic context) is a common approach in application logging which helps identifying the context of a log message. For example, in a web application it could be desirable to have the username logged with each message, so that in case of an issue developers can easily trace what happened to that particular user.
@@ -138,4 +142,4 @@ public void someAdvisedMethod(@MDCValue("Name") String interestingParam, String 
 
 == License
 
-MIT
+https://opensource.org/licenses/MIT[MIT]
