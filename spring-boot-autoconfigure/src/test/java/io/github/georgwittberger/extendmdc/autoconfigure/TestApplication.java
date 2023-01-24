@@ -1,4 +1,4 @@
-package io.github.georgwittberger.extendmdc.example;
+package io.github.georgwittberger.extendmdc.autoconfigure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
-public class Application {
+public class TestApplication {
   public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
+    SpringApplication.run(TestApplication.class, args);
   }
 }

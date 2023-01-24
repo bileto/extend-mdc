@@ -2,7 +2,6 @@ package io.github.georgwittberger.extendmdc.example.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,10 +10,13 @@ import io.github.georgwittberger.extendmdc.example.service.ExampleService;
 
 @RestController
 public class ExampleController {
-  private static final Logger log = LoggerFactory.getLogger(ExampleController.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ExampleController.class);
 
-  @Autowired
-  private ExampleService exampleService;
+  private final ExampleService exampleService;
+
+  public ExampleController(ExampleService exampleService) {
+    this.exampleService = exampleService;
+  }
 
   @GetMapping("/")
   public String generalGreeting() {
@@ -23,9 +25,10 @@ public class ExampleController {
 
   @GetMapping("/{userName}")
   public String personalGreeting(@PathVariable("userName") String userName) {
-    log.info("Request a message for a specific username from the service");
+    LOG.info("Request a message for a specific username from the service");
     String message = exampleService.getMessage(userName);
-    log.info("Return the message to the user");
+    LOG.info("Return the message to the user");
+
     return message;
   }
 }

@@ -9,11 +9,12 @@ import io.github.georgwittberger.extendmdc.annotation.MDCValue;
 
 @Service
 public class ExampleService {
-  private static final Logger log = LoggerFactory.getLogger(ExampleService.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ExampleService.class);
 
   @ExtendMDC({ @MDCValue(value = "ServiceName", content = "getMessage") })
   public String getMessage(@MDCValue("UserName") String userName) {
-    log.info("Return a message for a specific username");
+    LOG.info("Return a message for a specific username");
+
     return "Hello, " + userName + "! Nice to meet you.";
   }
 }

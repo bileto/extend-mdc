@@ -1,27 +1,23 @@
 package io.github.georgwittberger.extendmdc.autoconfigure;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.springframework.test.util.AssertionErrors.assertNotNull;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import io.github.georgwittberger.extendmdc.aspect.ExtendMDCAspect;
 
-@RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AutoConfigureTestConfiguration.class)
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(classes = TestApplication.class)
+@Import(AutoConfigureTestConfiguration.class)
 public class ExtendMDCAutoConfigurationTest {
-  @Autowired
-  private ApplicationContext context;
-
   @Test
-  public void testAspectBeanIsCreated() {
-    ExtendMDCAspect aspect = context.getBean(ExtendMDCAspect.class);
-    assertThat(aspect, is(notNullValue()));
+  public void testAspectBeanIsCreated(ApplicationContext applicationContext) {
+    ExtendMDCAspect aspect = applicationContext.getBean(ExtendMDCAspect.class);
+    assertNotNull("Aspect Bean not provided from Spring Context", aspect);
   }
 }
