@@ -4,7 +4,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.assertThat;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.slf4j.MDC;
 
@@ -12,8 +13,10 @@ import io.github.georgwittberger.extendmdc.annotation.ExtendMDC;
 import io.github.georgwittberger.extendmdc.annotation.MDCValue;
 
 public class AspectTestService {
-  @ExtendMDC({ @MDCValue(value = "TestValue1", content = "TestContent1"),
-      @MDCValue(value = "TestValue2", content = "TestContent2"), @MDCValue("EmptyValue") })
+  @ExtendMDC({
+    @MDCValue(value = "TestValue1", content = "TestContent1"),
+    @MDCValue(value = "TestValue2", content = "TestContent2"), @MDCValue("EmptyValue")
+  })
   public void testAnnotationDefinedValues() {
     assertThat(MDC.get("TestValue1"), is(equalTo("TestContent1")));
     assertThat(MDC.get("TestValue2"), is(equalTo("TestContent2")));
@@ -25,7 +28,8 @@ public class AspectTestService {
       @MDCValue("StringValue") String stringParam, @MDCValue("IntegerValue") Integer integerParam,
       @MDCValue("LongValue") Long longParam, @MDCValue("FloatValue") Float floatParam,
       @MDCValue("DoubleValue") Double doubleParam, @MDCValue("BooleanValue") Boolean booleanParam,
-      String ignoredParam) {
+      String ignoredParam
+  ) {
     assertThat(MDC.get("ObjectValue"), is(equalTo(String.valueOf(objectParam))));
     assertThat(MDC.get("StringValue"), is(equalTo(stringParam)));
     assertThat(MDC.get("IntegerValue"), is(equalTo(String.valueOf(integerParam))));

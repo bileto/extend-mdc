@@ -1,19 +1,17 @@
 package io.github.georgwittberger.extendmdc.aspect;
 
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+@Aspect
 @Configuration
-@EnableAspectJAutoProxy
-public class AspectTestConfiguration {
+public class TestAspectConfiguration {
   @Bean
   public ExtendMDCAspect extendMDCAspect() {
     return new ExtendMDCAspect();
   }
 
   @Bean
-  public AspectTestService aspectTestService() {
-    return new AspectTestService();
-  }
+  public AspectTestService aspectTestService() { return new AspectTestService(); }
 }
