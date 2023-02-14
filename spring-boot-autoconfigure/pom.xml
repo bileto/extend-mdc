@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>io.github.georgwittberger</groupId>
+    <groupId>dev.bileto</groupId>
     <artifactId>extend-mdc</artifactId>
     <version>2.0.0-SNAPSHOT</version>
   </parent>
@@ -14,7 +14,7 @@
 
   <name>ExtendMDC Spring Boot Auto-Configuration</name>
   <description>A Spring Boot auto-configuration for the ExtendMDC aspect</description>
-  <url>https://github.com/georgwittberger/extend-mdc</url>
+  <url>https://github.com/bileto/extend-mdc</url>
 
   <licenses>
     <license>
@@ -25,6 +25,12 @@
 
   <developers>
     <developer>
+      <name>Josef Petrák</name>
+      <email>josef@petrak.xyz</email>
+      <url>https://github.com/jspetrak</url>
+      <id>jspetrak</id>
+    </developer>
+    <developer>
       <name>Georg Wittberger</name>
       <email>georg.wittberger@gmail.com</email>
       <url>https://github.com/georgwittberger</url>
@@ -33,20 +39,20 @@
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/georgwittberger/extend-mdc.git</connection>
-    <developerConnection>scm:git:https://github.com/georgwittberger/extend-mdc.git</developerConnection>
-    <url>https://github.com/georgwittberger/extend-mdc/tree/master</url>
+    <connection>scm:git:https://github.com/bileto/extend-mdc.git</connection>
+    <developerConnection>scm:git:https://github.com/bileto/extend-mdc.git</developerConnection>
+    <url>https://github.com/bileto/extend-mdc/tree/master</url>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
-    <url>https://github.com/georgwittberger/extend-mdc/issues</url>
+    <url>https://github.com/bileto/extend-mdc/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
   <dependencies>
     <dependency>
-      <groupId>io.github.georgwittberger</groupId>
+      <groupId>dev.bileto</groupId>
       <artifactId>extend-mdc-aspect</artifactId>
       <version>${project.version}</version>
       <optional>true</optional>

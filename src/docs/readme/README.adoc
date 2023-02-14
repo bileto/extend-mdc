@@ -39,13 +39,13 @@ If you want to use the plain aspect and do all what it takes to make it work, th
 [source,xml]
 ----
 <dependency>
-  <groupId>io.github.georgwittberger</groupId>
+  <groupId>dev.bileto</groupId>
   <artifactId>extend-mdc-aspect</artifactId>
   <version>${project.version}</version>
 </dependency>
 ----
 
-_Hint: See the_ https://github.com/georgwittberger/extend-mdc/tags[tags] _for the release versions._
+_Hint: See the_ https://github.com/bileto/extend-mdc/tags[tags] _for the release versions._
 
 The library provides the `ExtendMDCAspect` class which defines the advice.
 
@@ -56,7 +56,7 @@ If you are using Spring you can let the framework set up the aspect for you (not
 [source,xml]
 ----
 <dependency>
-  <groupId>io.github.georgwittberger</groupId>
+  <groupId>dev.bileto</groupId>
   <artifactId>extend-mdc-aspect</artifactId>
   <version>${project.version}</version>
 </dependency>
@@ -70,7 +70,7 @@ If you are using Spring you can let the framework set up the aspect for you (not
 </dependency>
 ----
 
-_Hint: See the_ https://github.com/georgwittberger/extend-mdc/tags[tags] _for the release versions._
+_Hint: See the_ https://github.com/bileto/extend-mdc/tags[tags] _for the release versions._
 
 _Hint: Choose suitable versions for_ `spring-aop` _and_ `aspectjweaver` _depending on the version of Spring you are using in your project._
 
@@ -99,13 +99,13 @@ If you are using Spring Boot you can leverage its auto-configuration mechanism t
   <artifactId>spring-boot-starter-aop</artifactId>
 </dependency>
 <dependency>
-  <groupId>io.github.georgwittberger</groupId>
+  <groupId>dev.bileto</groupId>
   <artifactId>extend-mdc-spring-boot-starter</artifactId>
   <version>${project.version}</version>
 </dependency>
 ----
 
-_Hint: See the_ https://github.com/georgwittberger/extend-mdc/tags[tags] _for the release versions._
+_Hint: See the_ https://github.com/bileto/extend-mdc/tags[tags] _for the release versions._
 
 _Hint: The_ `spring-boot-starter-aop` _is required to provide all the Spring-AOP dependencies since we want to keep our starter independent of the Spring version._
 

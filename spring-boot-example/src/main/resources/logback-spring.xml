@@ -7,7 +7,7 @@
       <charset>utf8</charset>
     </encoder>
   </appender>
-  <logger name="io.github.georgwittberger.extendmdc.aspect.ExtendMDCAspect" level="DEBUG"/>
+  <logger name="dev.bileto.extendmdc.aspect.ExtendMDCAspect" level="DEBUG"/>
   <root level="INFO">
     <appender-ref ref="CONSOLE" />
   </root>
