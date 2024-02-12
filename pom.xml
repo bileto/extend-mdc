@@ -65,7 +65,7 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <aspectj.version>1.9.21</aspectj.version>
-    <slf4j.version>2.0.11</slf4j.version>
+    <slf4j.version>2.0.12</slf4j.version>
     <logback.version>1.4.14</logback.version>
     <spring.version>6.0.3</spring.version>
     <spring-boot.version>3.0.1</spring-boot.version>
