@@ -208,7 +208,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.1.1</version>
         <configuration>
           <preparationGoals>clean verify scm:add@stage-readme scm:checkin@commit-release-readme</preparationGoals>
           <completionGoals>process-resources scm:add@stage-readme scm:checkin@commit-snapshot-readme</completionGoals>
